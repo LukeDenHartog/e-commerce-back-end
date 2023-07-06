@@ -4,19 +4,30 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 // The `/api/products` endpoint
 
 // get all products
-router.get('/', (req, res) => {
-  // find all products
+router.get('/', async (req, res) => {
+   try{  // find all products
   // be sure to include its associated Category and Tag data
+  const allProducts = await Product.findAll( {include: [{model: Category}, { model: Tag}] })
+  res.status(200).json(allProducts)
+} catch {
+  res.status(500).json( { message: "Cannot access products"})
+}
+
 });
 
 // get one product
-router.get('/:id', (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+router.get('/:id', async (req, res) => {
+  try { // find a single product by its `id` // be sure to include its associated Category and Tag data
+    const singleProduct = await Product.findByPk( req.params.id, { include: [{ model: Category }, { model: Tag}] })
+    res.status(200).json(singleProduct);
+  } catch {
+    res.status(500).json( { message: "Cannot access product"})
+  }
 });
 
 // create new product
 router.post('/', (req, res) => {
+  
   /* req.body should look like this...
     {
       product_name: "Basketball",
