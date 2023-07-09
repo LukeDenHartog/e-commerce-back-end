@@ -36,26 +36,28 @@ router.post('/', async (req, res) => {
    const newCat = await Category.create(req.body);
    res.status(200).json(newCat);
   } catch (error) {
-    res.status(400).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
+    res.status(500).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
   }
  
 });
 
 router.put('/:id', async (req, res) => {
-  try {  // update a category by its `id` value
+  
+  try { // this code snippet is using Sequelize to update a category from a database table based on the provided id in the request parameters.
   const updatedCategory = await Category.update(req.body, {where: {id: req.params.id } })
   res.status(200).json(updatedCategory);
 } catch {
-  res.status(400).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
+  res.status(500).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
 }
  
 });
 
 router.delete('/:id', async (req, res) => {
-  try { // delete a category by its `id` value
-    deletedCategory = await Category.destroy(req.body, {where: {id: req.params.id} })
+  try { // this code snippet is using Sequelize to delete a product from a database table based on the provided id in the request parameters. 
+    deletedCategory = await Category.destroy( {where: {id: req.params.id} })
+    res.status(200).json(deletedCategory);
   } catch {
-    res.status(400).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
+    res.status(500).json({ message: 'Bad Request: Invalid parameters or request syntax.' });
   }
   
 });
