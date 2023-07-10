@@ -8,11 +8,13 @@ This project is the back end for an e-commerce site. It's a Express.js API that 
 
 ## Installation
 
-To install this project please clone the GitHub repository. After cloning the repo the user should run the following text "npm install" into the terminal to download the necessary node packages. Users should also create their own ".env" file inside the project folder.  There's a example on how users should create the .env file in the file named ".env.EXAMPLE". MySQL is also required and should be downloaded before attempting to run the program. Lastly you should seed the database by running "node seeds" in the terminal.
+To install this project please clone the GitHub repository. After cloning the repo the user should run the following text `npm install` into the terminal to download the necessary node packages. Users should also create their own ".env" file inside the project folder.  There's a example on how users should create the .env file in the file named ".env.EXAMPLE". MySQL is also required and should be downloaded before attempting to run the program. Lastly you should seed the database by running "node seeds" in the terminal.
 
 ## Usage
 
-To use this application you first have to follow the installation instructions in the README file and make sure you have a MySQL server started. To start your MySQL server, insert this command into the Terminal "mysql.server start". Once you finish all previous steps run the command "npm run start". The user can now make GET, POST, PUT, and DELETE routes to perform CRUD operations.
+To use this application you first have to follow the installation instructions in the README file and make sure you have a MySQL server started. To start your MySQL server, insert this command into the Terminal `mysql.server start`. Once you finish all previous steps run the command `npm run start`. The user can now make GET, POST, PUT, and DELETE routes to perform CRUD operations.
+
+Here is a walkthrough video to help users. <https://drive.google.com/file/d/1HKEJS9LBe0HrcY9RQkzMGMNbS0kyOvPt/view?usp=drive_link>
 
 ## Contribution Guidelines
 
@@ -20,7 +22,7 @@ If you'd like to contribute to this project in any way please pull the files fro
 
 ## Test Instructions
 
-To test the RESTFUL API routes the user should download Insomnia <https://insomnia.rest/>. The user can then use the URL (http://localhost:3001) to test different endpoints like "/api/categories, /api/products, /api/tags".
+To test the RESTFUL API routes the user should download Insomnia <https://insomnia.rest/>. The user can then use the URL <http://localhost:3001> to test different endpoints like "/api/categories, /api/products, /api/tags".
 
 ## License
 
@@ -30,4 +32,4 @@ This application is covered under: Apache License 2.0
 
  My GitHub username is: Afrozez <https://github.com/Afrozez/>
 
-If anyone has a question to ask they can reach me via email at LukeADenHartog@gmail.com
+If anyone has a question to ask they can reach me via email at <LukeADenHartog@gmail.com>
